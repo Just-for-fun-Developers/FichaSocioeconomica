@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- ------------ -->
+<div class="px-4 pt-5 my-5 text-center border-bottom">
+    <h1 class="display-4 fw-bold">Bienvenido(a)</h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">Para acceder a su ficha socioeconómica, puede elegir una de las siguientes opciones:</p>
+        <!-- <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+        <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Ingresante</button>
+        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Iniciar sesión</button>
+      </div> -->
+    </div>
+</div>
+
+
+
+
+<div class="base">
+    <!-- CARD -->
+    <div class="container-sm pb-5">
+        <div class="row">
+            <div class="col-sm-6 pt-5 text-center">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Ingresante</h5>
+                        <p class="card-text">Para acceder al sistema como ingresante, es necesario proporcionar el
+                            número de documento de identidad y la modalidad de ingreso en el formulario de inicio de
+                            sesión. </p>
+                        <a href="{{url_for('users.login_ingresante')}}" class="btn">acceder</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 pt-5 text-center">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title align-text-center">Iniciar Sesión</h5>
+                        <p class="card-text">Si ya has registrado tu ficha socioeconómica, puedes utilizar esta opción
+                            para iniciar sesión ingresando tu nombre de usuario y contraseña en el formulario de inicio
+                            de sesión.</p>
+                        <a href="{{url_for('users.login_regular')}}" class="btn">Iniciar Sesión</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 pt-5 text-center mx-auto">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Administrador</h5>
+                        <p class="card-text">Iniciar sesión como administrador.</p>
+                        <a href="{{url_for('users.login_administrativo')}}" class="btn btn-primary">Iniciar Sesión</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <a href="https://iradesign.io"> 
+   Illustrations by IRA Design 
+ </a>  -->
+    <img src="{{ url_for('static',filename='images/bg-6.svg') }}" id="l-img-3" class="mx-auto d-block pb-5" alt="...">
+</div>
+
+{% endblock %}

@@ -1,0 +1,149 @@
+{% extends "base_ficha.html" %}
+{% block content %}
+
+
+<div class="container-sm pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto">
+    <div class="row flex-grow-sm-1 flex-grow-0">
+        <aside class="col-sm-3 flex-grow-sm-1 flex-shrink-1 flex-grow-0 sticky-top pb-sm-0 pb-3 fix">
+            <div class="bg-light border rounded-3 p-1 h-100 sticky-top">
+                <ul class="nav nav-pills flex-sm-column flex-row mb-auto justify-content-between text-truncate">
+                    <li class="nav-item">
+                        <a href="{{url_for('services.datos_personales')}}" class="nav-link px-2 text-truncate">
+                            <i class="fas fa-id-card" data-toggle="tooltip" data-placement="top"
+                                title="Datos Personales"></i>
+                            <span class="d-none d-sm-inline">Datos Personales</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{url_for('services.datos_procedencia')}}" class="nav-link px-2 text-truncate">
+                            <i class="fa fa-earth-americas" data-toggle="tooltip" data-placement="top"
+                                title="Datos de procedencia"></i>
+                            <span class="d-none d-sm-inline">Datos de procedencia</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{url_for('services.datos_residencia')}}" class="nav-link px-2 text-truncate">
+                            <i class="fa-solid fa-house" data-toggle="tooltip" data-placement="top"
+                                title="Datos de residencia"></i>
+                            <span class="d-none d-sm-inline">Datos de residencia</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{url_for('services.datos_academicos')}}" class="nav-link px-2 text-truncate">
+                            <i class="fa-solid fa-book" data-toggle="tooltip" data-placement="top"
+                                title="Datos academicos"></i>
+                            <span class="d-none d-sm-inline">Datos academicos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{url_for('services.datos_padre')}}" class="nav-link px-2 text-truncate">
+                            <i class="fas fa-user-tie" data-toggle="tooltip" data-placement="top"
+                                title="Datos del padre"></i>
+                            <span class="d-none d-sm-inline">Datos del padre</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{url_for('services.datos_madre')}}" class="nav-link px-2 text-truncate">
+                            <i class="fas fa-user-alt" data-toggle="tooltip" data-placement="top"
+                                title="Datos de la madre"></i>
+                            <span class="d-none d-sm-inline">Datos de la madre</span> </a>
+                    </li>
+                    <li>
+                        <a href="{{url_for('services.situacion_familiar')}}" class="nav-link px-2 text-truncate">
+                            <i class="fas fa-users" data-toggle="tooltip" data-placement="top"
+                                title="Situación familiar"></i>
+                            <span class="d-none d-sm-inline">Situación familiar</span> </a>
+                    </li>
+                    <hr class="my-1" />
+                    <li>
+                        <a href="#" class="nav-link px-2 text-truncate">
+                            <i class="fa-solid fa-print" data-toggle="tooltip" data-placement="top"
+                                title="Imprimir Constancia"></i>
+                            <span class="d-none d-sm-inline">Imprimir Constancia</span> </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <main class="col overflow-auto h-100">
+            <div class="bg-light border rounded-3 p-3">
+
+                <h2>Datos Personales</h2>
+                <p class="desc">Información de sus datos personales.</p>
+                <div class="row g-3">
+                    <div class="col-sm-8">
+                        <label for="" class="form-label">Código</label>
+                        <input type="text" class="form-control" id="" placeholder="" value="{{dper.codigo_matricula}}"
+                            readonly />
+
+                    </div>
+
+                    <div class="col-sm-8">
+                        <label for="" class="form-label">Carrera Profesional</label>
+                        <input type="text" class="form-control" id="" placeholder="" value="{{dper.carrera}}"
+                            readonly />
+                    </div>
+                    <div class="col-sm-8">
+                        <label for="" class="form-label">Facultad</label>
+                        <input type="text" class="form-control" id="" placeholder="" value="{{dper.facultad}}"
+                            readonly />
+                    </div>
+                </div>
+                <hr class="my-4" />
+                <h4 class="mb-3">Nombre completo</h4>
+
+                <div class="row g-3">
+                    <div class="col-sm-3">
+                        <label for="" class="form-label">Apellido paterno</label>
+                        <input type="text" class="form-control" id="" placeholder="" value="{{dper.apellido_pa}}"
+                            readonly />
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="" class="form-label">Apellido materno</label>
+                        <input type="text" class="form-control" id="" placeholder="" value="{{dper.apellido_ma}}"
+                            readonly />
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="" class="form-label">Nombres</label>
+                        <input type="text" class="form-control" id="" placeholder="" value="{{dper.nombre}}" readonly />
+                    </div>
+
+
+
+                    <div class="col-sm-3">
+                        <label for="" class="form-label">Documento</label>
+                        <input type="text" class="form-control" id="" placeholder="" value="{{dper.dni}}" readonly />
+                    </div>
+
+                    <div class="col-sm-3">
+                        <label for="" class="form-label">¿Tiene discapacidad?</label>
+                        <input type="text" class="form-control" id="" placeholder="" value="{{dper.discapacitado}}"
+                            readonly />
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="" class="form-label">Estado civil</label>
+                        <input type="text" class="form-control" id="" placeholder="" value="{{dper.estado_civil}}"
+                            readonly />
+                    </div>
+
+
+
+                    <div class="col-sm-5">
+                        <label for="" class="form-label">Correo electronico</label>
+                        <input type="text" class="form-control" id="" placeholder="" value="{{dper.email}}" readonly />
+                    </div>
+
+
+                    <div class="col-sm-5">
+                        <label for="" class="form-label">Celular</label>
+                        <input type="number" class="form-control" maxlength="9" id="" placeholder=""
+                            value="{{dper.celular}}" readonly />
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+
+
+{% endblock %}

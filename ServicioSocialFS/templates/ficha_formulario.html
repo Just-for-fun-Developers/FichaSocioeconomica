@@ -1,0 +1,761 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- alerta - aviso -->
+<div class="container">
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <div>
+            Es <strong>importante que lea y responda detenidamente</strong> a todas las preguntas de la Ficha
+            Socioeconómica. Recuerde que el ingreso de sus datos socioeconómicos se considera una Declaración Jurada y
+            cualquier estudiante que no declare correctamente podría enfrentar consecuencias. Por favor, asegúrese de
+            tomar en serio esta obligación.
+        </div>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+</div>
+
+<!-- Formulario -->
+<div class="main">
+    <div class="container">
+        <form method="POST">
+            {{form.hidden_tag()}}
+
+            <div>
+                <h3>Datos Personales</h3>
+                <fieldset>
+                    <h2>Datos Personales</h2>
+                    <p class="desc">Información de sus datos personales.</p>
+                    <div class="col-sm-8">
+                        {{form.dper_codigo_matricula.label}}
+                        {{form.dper_codigo_matricula(class="form-control" ,placeholder="Ingrese su código de matrícula")}}
+                        <div class="invalid-feedback">Valid first name is .</div>
+                    </div>
+
+                    <div class="col-sm-8">
+                        {{form.dper_carrera.label}}
+                        {{form.dper_carrera(class="form-control" ,placeholder="Ingrese su Carrera Profesional")}}
+                        <div class="invalid-feedback">Valid asdquired.</div>
+                    </div>
+                    <div class="col-sm-8">
+                        {{form.dper_facultad.label}}
+                        {{form.dper_facultad(class="form-control" ,placeholder="Ingrese su Facultad")}}
+                        <div class="invalid-feedback">Valid asdquired.</div>
+                    </div>
+
+                    <div class="form-row">
+                        <label class="form-label">Nombre completo</label>
+                        <div class="form-flex">
+                            <div class="form-group">
+                                {{form.dper_apellido_pa(class="form-control")}}
+                                <span class="text-input">Apellido Paterno</span>
+                            </div>
+                            <div class="form-group">
+                                {{form.dper_apellido_ma(class="form-control")}}
+                                <span class="text-input">Apellido Materno</span>
+                            </div>
+                            <div class="form-group">
+                                {{form.dper_nombre(class="form-control")}}
+                                <span class="text-input">Nombres</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-8">
+                        {{form.dper_dni.label}}
+                        {{form.dper_dni(class="form-control" ,placeholder="Ingrese su DNI...")}}
+                        <div class="invalid-feedback">Valid asdquired.</div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        {{form.dper_discapacitado.label}}
+                        {{form.dper_discapacitado(class="form-control")}}
+
+                    </div>
+                    <div class="col-sm-4">
+                        {{form.dper_estado_civil.label}}
+                        {{form.dper_estado_civil(class="form-control" ,placeholder="Ingrese su Estado Civil")}}
+                        <div class="invalid-feedback">Valid asdquired.</div>
+                    </div>
+                    <div class="form-group">
+                        {{form.dper_email.label}}
+                        {{form.dper_email()}}
+                        <span class="text-input">Ejemplo :<span> ejemplo@gmail.com</span></span>
+                    </div>
+
+                    <div class="col-sm-8">
+                        {{form.dper_celular.label}}
+                        {{form.dper_celular(class="form-control" ,placeholder="Ingrese su Número de Celular")}}
+                        <div class="invalid-feedback">Valid first name is .</div>
+                    </div>
+                </fieldset>
+
+                <h3>Datos de procedencia</h3>
+                <fieldset>
+                    <h2>Lugar de Procedencia</h2>
+                    <p class="desc">Donde vivias antes de Ingresar a la UNAP.</p>
+                    <div class="fieldset-content">
+                        <h4 class="mb-3">Lugar de procedencia</h4>
+                        <div class="row g-3">
+                            <div class="col-sm-4">
+                                {{form.dpro_pais.label}}
+                                {{form.dpro_pais(class="form-control" ,placeholder="Ingrese el país de origen")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-sm-4">
+                                {{form.dpro_departamento.label}}
+                                {{form.dpro_departamento(class="form-control" ,placeholder="Ingrese su departamento de origen")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                {{form.dpro_provincia.label}}
+                                {{form.dpro_provincia(class="form-control" ,placeholder="Ingrese su provincia de origen")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                {{form.dpro_distrito.label}}
+                                {{form.dpro_distrito(class="form-control" ,placeholder="Ingrese su distrito de origen")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                        </div>
+                        <hr class="my-4" />
+                        <h4 class="mb-3">Respecto a la Vivienda</h4>
+                        <div class="row g-3">
+                            <div class="col-sm-4">
+                                {{form.dpro_tipo_vivienda.label}}
+                                {{form.dpro_tipo_vivienda(class="form-control" ,placeholder="Ingrese su tipo de vivienda")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                            <div class="col-sm-4">
+                                {{form.dpro_material_vivienda.label}}
+                                {{form.dpro_material_vivienda(class="form-control" ,placeholder="Ingrese su material de vivienda")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                            <div class="col-sm-4">
+                                {{form.dpro_num_habitaciones.label}}
+                                {{form.dpro_num_habitaciones(class="form-control" ,placeholder="Ingrese el número de habitaciones")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-sm-4">
+                                {{form.dpro_zona_rural.label}}
+                                {{form.dpro_zona_rural(class="form-control" )}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                            <div class="col-sm-8">
+                                {{form.dpro_barrio.label}}
+                                {{form.dpro_barrio(class="form-control")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-sm-12">
+                                {{form.dpro_direccion.label}}
+                                {{form.dpro_direccion(class="form-control" ,placeholder="Ingrese su dirección")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                        </div>
+
+                        <hr class="my-4" />
+                        <h4 class="mb-3">Servicios Básicos</h4>
+                        <div class="row g-3">
+                            <div class="col-sm-4">
+                                {{form.dpro_luz_electrica.label}}
+                                {{form.dpro_luz_electrica(class="form-control")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                            <div class="col-sm-4">
+                                {{form.dpro_agua_potable.label}}
+                                {{form.dpro_agua_potable(class="form-control")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                {{form.dpro_desague.label}}
+                                {{form.dpro_desague(class="form-control")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                        </div>
+
+                        <hr class="my-4" />
+                        <h4 class="mb-3">Servicios Complementarios</h4>
+                        <div class="row g-3">
+                            <div class="col-sm-3">
+                                {{form.dpro_telefono_fijo.label}}
+                                {{form.dpro_telefono_fijo(class="form-control")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                            <div class="col-sm-3">
+                                {{form.dpro_internet.label}}
+                                {{form.dpro_internet(class="form-control")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                            <div class="col-sm-3">
+                                {{form.dpro_television_cable.label}}
+                                {{form.dpro_television_cable(class="form-control" )}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                            <div class="col-sm-3">
+                                {{form.dpro_radio.label}}
+                                {{form.dpro_radio(class="form-control")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <h3>Datos de residencia</h3>
+                <fieldset>
+                    <h2>Lugar de Residencia</h2>
+                    <p class="desc">Donde vives ahora.</p>
+                    <div class="fieldset-content">
+                        <h4 class="mb-3">Lugar de Residencia</h4>
+                        <div class="row g-3">
+                            <div class="col-sm-4">
+                                {{form.dres_pais.label}}
+                                {{form.dres_pais(class="form-control" ,placeholder="Ingrese el país de origen")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-sm-4">
+                                {{form.dres_departamento.label}}
+                                {{form.dres_departamento(class="form-control" ,placeholder="Ingrese su departamento de origen")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                {{form.dres_provincia.label}}
+                                {{form.dres_provincia(class="form-control" ,placeholder="Ingrese su provincia de origen")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                {{form.dres_distrito.label}}
+                                {{form.dres_distrito(class="form-control" ,placeholder="Ingrese su distrito de origen")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                        </div>
+                        <hr class="my-4" />
+                        <h4 class="mb-3">Respecto a la Vivienda</h4>
+                        <div class="row g-3">
+                            <div class="col-sm-4">
+                                {{form.dres_tipo_vivienda.label}}
+                                {{form.dres_tipo_vivienda(class="form-control" ,placeholder="Ingrese su tipo de vivienda")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                            <div class="col-sm-4">
+                                {{form.dres_material_vivienda.label}}
+                                {{form.dres_material_vivienda(class="form-control" ,placeholder="Ingrese su material de vivienda")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                            <div class="col-sm-4">
+                                {{form.dres_num_habitaciones.label}}
+                                {{form.dres_num_habitaciones(class="form-control" ,placeholder="Ingrese el número de habitaciones")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-sm-4">
+                                {{form.dres_zona_rural.label}}
+                                {{form.dres_zona_rural(class="form-control" )}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                            <div class="col-sm-8">
+                                {{form.dres_barrio.label}}
+                                {{form.dres_barrio(class="form-control")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-sm-12">
+                                {{form.dres_direccion.label}}
+                                {{form.dres_direccion(class="form-control" ,placeholder="Ingrese su dirección")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                            <div class="col-sm-12">
+                                {{form.dres_referencia.label}}
+                                {{form.dres_referencia(class="form-control" ,placeholder="Referencia")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                        </div>
+
+                        <hr class="my-4" />
+                        <h4 class="mb-3">Servicios Básicos</h4>
+                        <div class="row g-3">
+                            <div class="col-sm-4">
+                                {{form.dres_luz_electrica.label}}
+                                {{form.dres_luz_electrica(class="form-control")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                            <div class="col-sm-4">
+                                {{form.dres_agua_potable.label}}
+                                {{form.dres_agua_potable(class="form-control")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+
+                            <div class="col-sm-4">
+                                {{form.dres_desague.label}}
+                                {{form.dres_desague(class="form-control")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                        </div>
+
+                        <hr class="my-4" />
+                        <h4 class="mb-3">Servicios Complementarios</h4>
+                        <div class="row g-3">
+                            <div class="col-sm-3">
+                                {{form.dres_telefono_fijo.label}}
+                                {{form.dres_telefono_fijo(class="form-control")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                            <div class="col-sm-3">
+                                {{form.dres_internet.label}}
+                                {{form.dres_internet(class="form-control")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                            <div class="col-sm-3">
+                                {{form.dres_television_cable.label}}
+                                {{form.dres_television_cable(class="form-control" )}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                            <div class="col-sm-3">
+                                {{form.dres_radio.label}}
+                                {{form.dres_radio(class="form-control")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <h3>Datos académicos</h3>
+                <fieldset>
+                    <h2>Datos académicos</h2>
+                    <p class="desc">
+                        Información de datos académicos colegio donde estudio y más
+                    </p>
+                    <div class="fieldset-content">
+                        <div class="row g-3">
+                            <div class="col-sm-8">
+                                {{form.daca_colegio.label}}
+                                {{form.daca_colegio(class="form-control")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                {{form.daca_ano_culminacion_estudio.label}}
+                                {{form.daca_ano_culminacion_estudio(class="form-control")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                            <div class="col-sm-6">
+                                {{form.daca_num_postulacion.label}}
+                                {{form.daca_num_postulacion(class="form-control")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-sm-8">
+                                <!-- agregar -->
+                            </div>
+                        </div>
+
+                        <div class="col-sm-8">
+                            {{form.daca_otra_carrera.label}}
+                            {{form.daca_otra_carrera(class="form-control" ,placeholder="Ingrese la carrera")}}
+                            <div class="invalid-feedback">Valid asdquired.</div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                {{form.daca_tipo_preparacion.label}}
+                                {{form.daca_tipo_preparacion(class="form-control" ,placeholder="Ingrese el tipo de preparación")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                            <div class="col-sm-6">
+                                {{form.daca_motivo_postulacion.label}}
+                                {{form.daca_motivo_postulacion(class="form-control" ,placeholder="Ingrese el proposito")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-sm-8">
+                                <!-- agregar -->
+                            </div>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-sm-6">
+                                {{form.daca_escuela_motivo.label}}
+                                {{form.daca_escuela_motivo(class="form-control" ,placeholder="Ingrese el motivo")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <h3>Datos del padre</h3>
+                <fieldset>
+                    <h2>Datos del padre</h2>
+                    <p class="desc">
+                        Información de datos del padre, nombres ocupación y más
+                    </p>
+                    <div class="row g-3">
+                        <div class="col-sm-8">
+                            {{form.dpad_apellido_pa.label}}
+                            {{form.dpad_apellido_pa(class="form-control")}}
+                            <div class="invalid-feedback">Valid asdquired.</div>
+                        </div>
+                        <div class="col-sm-8">
+                            {{form.dpad_apellido_ma.label}}
+                            {{form.dpad_apellido_ma(class="form-control")}}
+                            <div class="invalid-feedback">Valid asdquired.</div>
+                        </div>
+                        <div class="col-sm-8">
+                            {{form.dpad_nombre.label}}
+                            {{form.dpad_nombre(class="form-control")}}
+                            <div class="invalid-feedback">Valid asdquired.</div>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            {{form.dpad_esta_vivo.label}}
+                            {{form.dpad_esta_vivo(class="form-control")}}
+                            <div class="invalid-feedback">Valid asdquired.</div>
+                        </div>
+                        <div class="col-sm-6">
+                            {{form.dpad_estado_civil.label}}
+                            {{form.dpad_estado_civil(class="form-control" )}}
+                            <div class="invalid-feedback">Valid asdquired.</div>
+                        </div>
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-sm-8">
+                            <!-- agregar -->
+                        </div>
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            {{form.dpad_nivel_educacion.label}}
+                            {{form.dpad_nivel_educacion(class="form-control")}}
+                            <div class="invalid-feedback">Valid asdquired.</div>
+                        </div>
+                        <div class="col-sm-6">
+                            {{form.dpad_fecha_nacimiento.label}}
+                            {{form.dpad_fecha_nacimiento(class="form-control")}}
+                            <div class="invalid-feedback">Valid asdquired.</div>
+                        </div>
+                    </div>
+                    <hr class="my-4" />
+                    <h4 class="mb-3">Lugar de Procedencia del Padre</h4>
+
+                    <div class="row g-3">
+                        <div class="col-sm-4">
+                            {{form.dpad_pais.label}}
+                            {{form.dpad_pais(class="form-control")}}
+                            <div class="invalid-feedback">Valid asdquired.</div>
+                        </div>
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-sm-4">
+                            {{form.dpad_departamento.label}}
+                            {{form.dpad_departamento(class="form-control")}}
+                            <div class="invalid-feedback">Valid asdquired.</div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            {{form.dpad_provincia.label}}
+                            {{form.dpad_provincia(class="form-control")}}
+                            <div class="invalid-feedback">Valid asdquired.</div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            {{form.dpad_distrito.label}}
+                            {{form.dpad_distrito(class="form-control")}}
+                            <div class="invalid-feedback">Valid asdquired.</div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        {{form.dpad_zona_rural.label}}
+                        {{form.dpad_zona_rural(class="form-control")}}
+                        <div class="invalid-feedback">Valid asdquired.</div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        {{form.dpad_discapacidad_trabajo.label}}
+                        {{form.dpad_discapacidad_trabajo(class="form-control")}}
+                        <div class="invalid-feedback">Valid asdquired.</div>
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-sm-4">
+                            {{form.dpad_primera_ocupacion.label}}
+                            {{form.dpad_primera_ocupacion(class="form-control")}}
+                            <div class="invalid-feedback">Valid asdquired.</div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            {{form.dpad_segunda_ocupacion.label}}
+                            {{form.dpad_segunda_ocupacion(class="form-control")}}
+                            <div class="invalid-feedback">Valid asdquired.</div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-8">
+                        {{form.dpad_ingresos.label}}
+                        {{form.dpad_ingresos(class="form-control")}}
+                        <div class="invalid-feedback">Valid asdquired.</div>
+                    </div>
+                </fieldset>
+
+
+
+
+
+
+
+
+                <h3>Datos de la madre</h3>
+                <fieldset>
+                    <h2>Datos de la madre</h2>
+                    <p class="desc">
+                        Información de datos del madre, nombres ocupación y más
+                    </p>
+                    <div class="row g-3">
+                        <div class="col-sm-8">
+                            {{form.dmad_apellido_pa.label}}
+                            {{form.dmad_apellido_pa(class="form-control")}}
+                            <div class="invalid-feedback">Valid asdquired.</div>
+                        </div>
+                        <div class="col-sm-8">
+                            {{form.dmad_apellido_ma.label}}
+                            {{form.dmad_apellido_ma(class="form-control")}}
+                            <div class="invalid-feedback">Valid asdquired.</div>
+                        </div>
+                        <div class="col-sm-8">
+                            {{form.dmad_nombre.label}}
+                            {{form.dmad_nombre(class="form-control")}}
+                            <div class="invalid-feedback">Valid asdquired.</div>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            {{form.dmad_esta_vivo.label}}
+                            {{form.dmad_esta_vivo(class="form-control")}}
+                            <div class="invalid-feedback">Valid asdquired.</div>
+                        </div>
+                        <div class="col-sm-6">
+                            {{form.dmad_estado_civil.label}}
+                            {{form.dmad_estado_civil(class="form-control" )}}
+                            <div class="invalid-feedback">Valid asdquired.</div>
+                        </div>
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-sm-8">
+                            <!-- agregar -->
+                        </div>
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-sm-6">
+                            {{form.dmad_nivel_educacion.label}}
+                            {{form.dmad_nivel_educacion(class="form-control")}}
+                            <div class="invalid-feedback">Valid asdquired.</div>
+                        </div>
+                        <div class="col-sm-6">
+                            {{form.dmad_fecha_nacimiento.label}}
+                            {{form.dmad_fecha_nacimiento(class="form-control")}}
+                            <div class="invalid-feedback">Valid asdquired.</div>
+                        </div>
+                    </div>
+                    <hr class="my-4" />
+                    <h4 class="mb-3">Lugar de Procedencia de la Madre</h4>
+
+                    <div class="row g-3">
+                        <div class="col-sm-4">
+                            {{form.dmad_pais.label}}
+                            {{form.dmad_pais(class="form-control")}}
+                            <div class="invalid-feedback">Valid asdquired.</div>
+                        </div>
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-sm-4">
+                            {{form.dmad_departamento.label}}
+                            {{form.dmad_departamento(class="form-control")}}
+                            <div class="invalid-feedback">Valid asdquired.</div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            {{form.dmad_provincia.label}}
+                            {{form.dmad_provincia(class="form-control")}}
+                            <div class="invalid-feedback">Valid asdquired.</div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            {{form.dmad_distrito.label}}
+                            {{form.dmad_distrito(class="form-control")}}
+                            <div class="invalid-feedback">Valid asdquired.</div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        {{form.dmad_zona_rural.label}}
+                        {{form.dmad_zona_rural(class="form-control")}}
+                        <div class="invalid-feedback">Valid asdquired.</div>
+                    </div>
+
+                    <div class="col-sm-4">
+                        {{form.dmad_discapacidad_trabajo.label}}
+                        {{form.dmad_discapacidad_trabajo(class="form-control")}}
+                        <div class="invalid-feedback">Valid asdquired.</div>
+                    </div>
+
+                    <div class="row g-3">
+                        <div class="col-sm-4">
+                            {{form.dmad_primera_ocupacion.label}}
+                            {{form.dmad_primera_ocupacion(class="form-control")}}
+                            <div class="invalid-feedback">Valid asdquired.</div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            {{form.dmad_segunda_ocupacion.label}}
+                            {{form.dmad_segunda_ocupacion(class="form-control")}}
+                            <div class="invalid-feedback">Valid asdquired.</div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-8">
+                        {{form.dmad_ingresos.label}}
+                        {{form.dmad_ingresos(class="form-control")}}
+                        <div class="invalid-feedback">Valid asdquired.</div>
+                    </div>
+                </fieldset>
+
+
+                <h3>Situación familiar</h3>
+                <fieldset>
+                    <h2>Situación economica</h2>
+                    <p class="desc">
+                        Información sobre su situación familiar
+                    </p>
+                    <div class="fieldset-content">
+                        <hr class="my-4" />
+                        <h4 class="mb-3">Dependencia economica</h4>
+
+
+                        <div class="row g-3">
+                            <div class="col-sm-4">
+                                {{form.sfam_dependencia_padre.label}}
+                                {{form.sfam_dependencia_padre(class="form-control")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                            <div class="col-sm-4">
+                                {{form.sfam_dependencia_madre.label}}
+                                {{form.sfam_dependencia_madre(class="form-control")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                            <div class="col-sm-4">
+                                {{form.sfam_dependencia_hermanos.label}}
+                                {{form.sfam_dependencia_hermanos(class="form-control")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                        </div>
+
+
+                        <div class="row g-3">
+                            <div class="col-sm-4">
+                                {{form.sfam_dependencia_conyuge.label}}
+                                {{form.sfam_dependencia_conyuge(class="form-control")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                            <div class="col-sm-4">
+                                {{form.sfam_dependencia_pariente.label}}
+                                {{form.sfam_dependencia_pariente(class="form-control")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                            <div class="col-sm-4">
+                                {{form.sfam_autosostenimiento.label}}
+                                {{form.sfam_autosostenimiento(class="form-control")}}
+                                <div class="invalid-feedback">Valid asdquired.</div>
+                            </div>
+                        </div>
+
+                        <hr class="my-4" />
+                        <h4 class="mb-3">¿Personas con las que vive durante sus estudios?</h4>
+                        <div class="col-sm-4">
+                            {{form.sfam_vive_con.label}}
+                            {{form.sfam_vive_con(class="form-control")}}
+                            <div class="invalid-feedback">Valid asdquired.</div>
+                        </div>
+
+                        <hr class="my-4" />
+                        <h4 class="mb-3">¿Persona con la que debe comunicarse en caso de emergencia?</h4>
+                        <div class="col-sm-8">
+                            {{form.sfam_contacto_nombre.label}}
+                            {{form.sfam_contacto_nombre(class="form-control")}}
+                            <div class="invalid-feedback">Valid asdquired.</div>
+                        </div>
+
+                        <div class="col-sm-8">
+                            {{form.sfam_contacto_parentesco.label}}
+                            {{form.sfam_contacto_parentesco(class="form-control")}}
+                            <div class="invalid-feedback">Valid asdquired.</div>
+                        </div>
+
+                        <div class="col-sm-8">
+                            {{form.sfam_contacto_direccion.label}}
+                            {{form.sfam_contacto_direccion(class="form-control")}}
+                            <div class="invalid-feedback">Valid asdquired.</div>
+                        </div>
+
+                        <div class="col-sm-8">
+                            {{form.sfam_contacto_lugar.label}}
+                            {{form.sfam_contacto_lugar(class="form-control")}}
+                            <div class="invalid-feedback">Valid asdquired.</div>
+                        </div>
+
+                        <div class="col-sm-8">
+                            {{form.sfam_contacto_celular.label}}
+                            {{form.sfam_contacto_celular(class="form-control")}}
+                            <div class="invalid-feedback">Valid first name is .</div>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-sm-8">
+                                {{form.user_password.label}}
+                                {{form.user_password(class="form-control")}}
+                            </div>
+                            <div class="col-sm-8">
+                                {{form.user_pass_confirm.label}}
+                                {{form.user_pass_confirm(class="form-control")}}
+                            </div>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-sm-8">
+                                {{form.submit()}}
+
+                            </div>
+
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

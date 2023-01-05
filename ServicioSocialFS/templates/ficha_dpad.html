@@ -1,0 +1,171 @@
+{% extends "base_ficha.html" %}
+{% block content %}
+
+<div class="container-sm pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto">
+    <div class="row flex-grow-sm-1 flex-grow-0">
+        <aside class="col-sm-3 flex-grow-sm-1 flex-shrink-1 flex-grow-0 sticky-top pb-sm-0 pb-3 fix">
+            <div class="bg-light border rounded-3 p-1 h-100 sticky-top">
+                <ul class="nav nav-pills flex-sm-column flex-row mb-auto justify-content-between text-truncate">
+                    <li class="nav-item">
+                        <a href="{{url_for('services.datos_personales')}}" class="nav-link px-2 text-truncate">
+                            <i class="fas fa-id-card" data-toggle="tooltip" data-placement="top"
+                                title="Datos Personales"></i>
+                            <span class="d-none d-sm-inline">Datos Personales</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{url_for('services.datos_procedencia')}}" class="nav-link px-2 text-truncate">
+                            <i class="fa fa-earth-americas" data-toggle="tooltip" data-placement="top"
+                                title="Datos de procedencia"></i>
+                            <span class="d-none d-sm-inline">Datos de procedencia</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{url_for('services.datos_residencia')}}" class="nav-link px-2 text-truncate">
+                            <i class="fa-solid fa-house" data-toggle="tooltip" data-placement="top"
+                                title="Datos de residencia"></i>
+                            <span class="d-none d-sm-inline">Datos de residencia</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{url_for('services.datos_academicos')}}" class="nav-link px-2 text-truncate">
+                            <i class="fa-solid fa-book" data-toggle="tooltip" data-placement="top"
+                                title="Datos academicos"></i>
+                            <span class="d-none d-sm-inline">Datos academicos</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{url_for('services.datos_padre')}}" class="nav-link px-2 text-truncate">
+                            <i class="fas fa-user-tie" data-toggle="tooltip" data-placement="top"
+                                title="Datos del padre"></i>
+                            <span class="d-none d-sm-inline">Datos del padre</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{url_for('services.datos_madre')}}" class="nav-link px-2 text-truncate">
+                            <i class="fas fa-user-alt" data-toggle="tooltip" data-placement="top"
+                                title="Datos de la madre"></i>
+                            <span class="d-none d-sm-inline">Datos de la madre</span> </a>
+                    </li>
+                    <li>
+                        <a href="{{url_for('services.situacion_familiar')}}" class="nav-link px-2 text-truncate">
+                            <i class="fas fa-users" data-toggle="tooltip" data-placement="top"
+                                title="Situación familiar"></i>
+                            <span class="d-none d-sm-inline">Situación familiar</span> </a>
+                    </li>
+                    <hr class="my-1" />
+                    <li>
+                        <a href="#" class="nav-link px-2 text-truncate">
+                            <i class="fa-solid fa-print" data-toggle="tooltip" data-placement="top"
+                                title="Imprimir Constancia"></i>
+                            <span class="d-none d-sm-inline">Imprimir Constancia</span> </a>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+        <main class="col overflow-auto h-100">
+            <div class="bg-light border rounded-3 p-3">
+
+                <h2>Datos del Padre</h2>
+                <p class="desc">Información de los datos personales del Padre</p>
+                <div class="row g-3">
+                    <div class="col-sm-4">
+                        <label for="" class="form-label">Apellido Paterno</label>
+                        <input type="text" class="form-control" id="" placeholder="" value="{{dpad.apellido_pa}}"
+                            readonly />
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label for="" class="form-label">Apellido Materno</label>
+                        <input type="text" class="form-control" id="" placeholder="" value="{{dpad.apellido_ma}}"
+                            readonly />
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="" class="form-label">Nombres</label>
+                        <input type="text" class="form-control" id="" placeholder="" value="{{dpad.nombre}}" readonly />
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="" class="form-label">¿Esta vivo?</label>
+                        <input type="text" class="form-control" id="" placeholder="" value="{{dpad.esta_vivo}}"
+                            readonly />
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="" class="form-label">Estado civil del Padre</label>
+                        <input type="text" class="form-control" id="" placeholder="" value="{{dpad.estado_civil}}"
+                            readonly />
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="" class="form-label">Nivel de Instrucción del Padre</label>
+                        <input type="text" class="form-control" id="" placeholder="" value="{{dpad.nivel_educacion}}"
+                            readonly />
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="" class="form-label">Fecha de Nacimiento del Padre</label>
+                        <input type="text" class="form-control" id="" placeholder="" value="{{dpad.fecha_nacimiento}}"
+                            readonly />
+                    </div>
+                </div>
+                <hr class="my-4" />
+                <h4 class="mb-3">Lugar de Procedencia del Padre</h4>
+
+                <div class="row g-3">
+                    <div class="col-sm-3">
+                        <label for="" class="form-label">Pais</label>
+                        <input type="text" class="form-control" id="" placeholder="" value="{{dpad.pais}}" readonly />
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="" class="form-label">Departamento</label>
+                        <input type="text" class="form-control" id="" placeholder="" value="{{dpad.departamento}}"
+                            readonly />
+                    </div>
+                    <div class="col-sm-4">
+                        <label for="" class="form-label">Provincia</label>
+                        <input type="text" class="form-control" id="" placeholder="" value="{{dpad.provincia}}"
+                            readonly />
+                    </div>
+
+
+
+                    <div class="col-sm-3">
+                        <label for="" class="form-label">Distrito</label>
+                        <input type="text" class="form-control" id="" placeholder="" value="{{dpad.distrito}}"
+                            readonly />
+                    </div>
+
+                    <div class="col-sm-3">
+                        <label for="" class="form-label">¿Vive en zona rural?</label>
+                        <input type="text" class="form-control" id="" placeholder="" value="{{dpad.zona_rural}}"
+                            readonly />
+                    </div>
+                    <div class="col-sm-3">
+                        <label for="" class="form-label">¿Presenta alguna discapacidad para trabajar?</label>
+                        <input type="text" class="form-control" id="" placeholder=""
+                            value="{{dpad.discapacidad_trabajo}}" readonly />
+                    </div>
+
+
+
+
+                    <div class="col-sm-5">
+                        <label for="" class="form-label">Ocupacion</label>
+                        <input type="number" class="form-control" maxlength="9" id=""
+                            placeholder="{{dpad.primera_ocupacion}}" readonly />
+                    </div>
+                    <div class="col-sm-5">
+                        <label for="" class="form-label">Segunda Ocupacion</label>
+                        <input type="number" class="form-control" maxlength="9" id=""
+                            placeholder="{{dpad.segunda_ocupacion}}" readonly />
+                    </div>
+                    <div class="col-sm-5">
+                        <label for="" class="form-label">Ingresos del Padre (S/.)</label>
+                        <input type="number" class="form-control" maxlength="9" id="" placeholder="{{dpad.ingresos}}"
+                            readonly />
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+
+{% endblock %}
