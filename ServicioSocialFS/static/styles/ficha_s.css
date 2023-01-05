@@ -577,3 +577,8 @@ display-flex, .form-flex, .form-date-group, .steps ul, .title, .title .step-numb
     height: 50px;
   }
   
+
+  input[type="checkbox"] {
+    width: 30px;
+    align-items: center;
+  }
