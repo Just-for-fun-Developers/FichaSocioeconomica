@@ -5,7 +5,7 @@
 - Clonar el repositorio en una carpeta
 - Hacer uso del terminal GitBash para ejecutar los comandos de los pasos siguientes
 - La ubicación del terminal tiene que estar dirigida a la carpeta donde se clono el proyecto
-- En la misma carpeta crear un environment(venv) con python
+- En la misma carpeta crear un environment (venv) con python
 ``` bash
 $ python -m venv venv
 ```
@@ -13,7 +13,7 @@ $ python -m venv venv
 ``` bash
 $ source venv/Scripts/activate
 ```
-- Instalar todos los requerimientos del archivo "requirements.txt" al environment(venv)
+- Instalar todos los requerimientos del archivo "requirements.txt" al environment (venv)
 ``` bash
 $ pip install -r requirements.txt
 ```
