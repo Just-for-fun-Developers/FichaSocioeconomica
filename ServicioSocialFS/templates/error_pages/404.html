@@ -1,7 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>404 PAGE NOT FOUND</h1>
+<div id="notfound">
+    <div class="notfound">
+        <div class="notfound-404">
+            <h3>¡Ups! Página no encontrada</h3>
+            <h1><span>4</span><span>0</span><span>4</span></h1>
+        </div>
+        <h2>lo sentimos, pero la página solicitada no se ha encontrado</h2>
+        <a class="btn" href="{{url_for('core.index')}}">Volver al inicio</a>
+    </div>
+</div>
 
 
 {% endblock %}

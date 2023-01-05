@@ -57,12 +57,10 @@ def logout():
 
 @users.route('/login_administrativo', methods=['GET', 'POST'])
 def login_administrativo():
-    form = LoginForm_administrativo()
+    form = LoginForm_regular()
     if form.validate_on_submit():
-        user = User.query.filter_by(email=form.email.data).first()
-        print(user)
-        print(form.password.data)
-        print(user.check_password(form.password.data))
+        user = User.query.filter_by(codigo=form.codigo.data).first()
+        
         if user.check_password(form.password.data) and user is not None:
             print('ok1')
             login_user(user)
@@ -70,10 +68,12 @@ def login_administrativo():
 
             next = request.args.get('next')
             if next == None or not next[0] == '/':
-                next = url_for('core.index')
+                next = url_for('services.admin_page')
                 print("ok2")
             return redirect(next)
-    return render_template('login.html', form=form)
+    else:
+        print('dont work')
+    return render_template('login_administrativo.html', form=form)
 
 ########################################################
 

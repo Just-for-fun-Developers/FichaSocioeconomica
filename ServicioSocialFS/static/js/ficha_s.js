@@ -25,7 +25,7 @@
         labels: {
             previous: 'Anterior',
             next: 'Siguiente',
-            finish: 'Terminar',
+            finish: '',
             current: ''
         },
         onStepChanging: function(event, currentIndex, newIndex) {

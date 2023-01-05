@@ -9,33 +9,30 @@
                     <div class="card" style="border-radius: 1rem;">
                         <div class="row g-0">
                             <div class="col-md-6 col-lg-5 d-none d-md-block">
-                                <img src="./images/sign_in_1.svg" alt="login form" class="img-fluid"
+                                <img src="{{ url_for('static',filename='images/sign_in_1.svg') }}" alt="login form" class="img-fluid"
                                     style="border-radius: 1rem 0 0 1rem;" />
                             </div>
                             <div class="col-md-6 col-lg-7 d-flex align-items-center">
                                 <div class="card-body p-4 p-lg-5 text-black">
 
-                                    <form>
+                                    <form method="POST">
                                         <div class="d-flex align-items-center mb-3 pb-1">
                                             <span class="h1 fw-bold mb-0">INICIAR SESIÓN</span>
                                         </div>
 
                                         <!-- <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Acceder como ingresante</h5> -->
 
+                                        {{form.hidden_tag()}}
                                         <div class="form-floating">
-                                            <input type="text" class="form-control" id="floatingInput"
-                                                placeholder="00000000">
-                                            <label for="floatingInput">Usuario</label>
+                                            {{form.codigo(placeholder="Usuario")}}
                                         </div>
 
                                         <div class="form-floating">
-                                            <input type="password" class="form-control" id="floatingInput"
-                                                placeholder="Password">
-                                            <label for="floatingInput">Contraseña</label>
+                                            {{form.password(placeholder="Contraseña")}}
                                         </div>
 
                                         <div class="pt-1 mb-4">
-                                            <button class="btn btn-dark btn-lg btn-block" type="button">Login</button>
+                                            {{form.submit(class='btn btn-dark btn-lg btn-block')}}
                                         </div>
                                     </form>
 

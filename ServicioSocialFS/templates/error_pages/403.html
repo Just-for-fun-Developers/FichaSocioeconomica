@@ -1,6 +1,17 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>403 Access Forbidden!</h1>
+<div id="notfound">
+    <div class="notfound">
+        <div class="notfound-404">
+            <h3>Error! Acceso denegado</h3>
+            <h1><span>4</span><span>0</span><span>3</span></h1>
+        </div>
+        <h2>Lo sentimos, no tienes permiso para acceder a esta página.</h2>
+        <!-- <h3>Si crees que se trata de un error, por favor contáctanos.</h3> -->
+        <!-- <hr> -->
+        <a class="btn" href="{{url_for('core.index')}}">Volver al inicio</a>
+    </div>
+</div>
 
 {% endblock %}

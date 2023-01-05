@@ -22,43 +22,19 @@
 
                                         <!-- <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Acceder como ingresante</h5> -->
                                         {{form.hidden_tag()}}
-                                        <!-- <div class="form-floating">
-                                            <input type="text" class="form-control" id="floatingInput"
-                                                placeholder="00000000">
-                                            <label for="floatingInput"></label>
-                                        </div> -->
-
-                                        {{form.dni.label()}}
-                                        {{form.dni(id="floatingInput")}}
-                                        {{form.modalidad.label()}}
-                                        {{form.modalidad()}}
-                                        {{form.submit(class="btn btn-primary")}}
-
-                                        <!-- <div class="col-md-12">
-                                            <label for="country" class="form-label">Modalidad</label>
-                                            <select class="form-select form-select-lg" id="country" required>
-                                                <option value="0">-- Elija una modalidad --</option>
-                                                <option value="1">Examen General</option>
-                                                <option value="1">CEPREUNA</option>
-                                                <option value="2">Primeros Puestos</option>
-                                                <option value="3">Deportistas Calificados</option>
-                                                <option value="4">Profesionales</option>
-                                                <option value="5">Traslado Interno</option>
-                                                <option value="6">Traslado Externo</option>
-                                                <option value="7">Especiales</option>
-                                                <option value="8">Ley 27277</option>
-                                                <option value="9">CONADIS</option>
-                                                <option value="10">COAR</option>
-                                                <option value="11">PRONABEC</option>
-                                            </select>
+                                        <div class="col-md-12">
+                                            {{form.dni.label()}}
+                                            {{form.dni()}}
+                                            {{form.modalidad.label()}}
+                                            {{form.modalidad()}}
                                             <div class="invalid-feedback">
                                                 Please select a valid country.
                                             </div>
-                                        </div> -->
+                                        </div>
 
-                                        <!-- <div class="pt-1 mb-4">
-                                            <button class="btn btn-dark btn-lg btn-block" type="button">Login</button>
-                                        </div> -->
+                                        <div class="pt-1 mb-4">
+                                            {{form.submit(class="btn btn-primary")}}
+                                        </div>
                                     </form>
 
                                 </div>

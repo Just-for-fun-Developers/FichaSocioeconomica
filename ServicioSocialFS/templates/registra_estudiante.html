@@ -1,0 +1,32 @@
+{% extends "base_ficha.html" %}
+{% block content %}
+
+
+
+
+
+<!-- -----body------- -->
+
+<div class="px-4 pt-5 pb-5 my-5 text-center border-bottom">
+    <h1 class="display-4 fw-bold">Registrar Estudiante</h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">Busca a un estudiante mediante el código de matricula &#128515;</p>
+        <div class="container d-flex justify-content-center pb-5">
+            <div class="card mt-12 p-4">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control form-control-lg" placeholder="Código de matricula">
+                    <div class="input-group-append p-4"><button class="btn"><i class="fas fa-search"></i><span
+                                class="sr-only">Buscar</span></button></div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+        <button type="button" class="btn btn-primary btn-lg px-4 me-sm-3">Ingresante</button>
+        <button type="button" class="btn btn-outline-secondary btn-lg px-4">Iniciar sesión</button>
+      </div> -->
+        <img src="{{ url_for('static',filename='images/Brainstorming.svg') }}" id="Brainstorming_img" alt="">
+    </div>
+</div>
+
+
+{% endblock %}

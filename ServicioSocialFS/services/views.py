@@ -163,6 +163,22 @@ def form_ingresante():
         print('pass qweqwe')
     return render_template('ficha_formulario.html', form=form)
 
+@services.route("/pagina_administrador")
+@login_required
+def admin_page():
+    val = current_user.codigo
+    print(val)
+    return render_template('administrador.html', val=val)
+
+@services.route("/registra_estudiante")
+@login_required
+def regist_est():
+    val = current_user.codigo
+    print(val)
+    return render_template('registra_estudiante.html', val=val)
+
+##############################################################################
+
 @services.route("/datos_personales")
 @login_required
 def datos_personales():
