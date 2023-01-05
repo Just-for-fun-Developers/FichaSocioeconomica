@@ -22,18 +22,19 @@
 
                                         <!-- <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Acceder como ingresante</h5> -->
                                         {{form.hidden_tag()}}
-                                        <div class="form-floating">
+                                        <!-- <div class="form-floating">
                                             <input type="text" class="form-control" id="floatingInput"
                                                 placeholder="00000000">
-                                            <label for="floatingInput">DNI</label>
-                                        </div>
+                                            <label for="floatingInput"></label>
+                                        </div> -->
+
                                         {{form.dni.label()}}
-                                        {{form.dni()}}
+                                        {{form.dni(id="floatingInput")}}
                                         {{form.modalidad.label()}}
                                         {{form.modalidad()}}
                                         {{form.submit(class="btn btn-primary")}}
 
-                                        <div class="col-md-12">
+                                        <!-- <div class="col-md-12">
                                             <label for="country" class="form-label">Modalidad</label>
                                             <select class="form-select form-select-lg" id="country" required>
                                                 <option value="0">-- Elija una modalidad --</option>
@@ -53,11 +54,11 @@
                                             <div class="invalid-feedback">
                                                 Please select a valid country.
                                             </div>
-                                        </div>
+                                        </div> -->
 
-                                        <div class="pt-1 mb-4">
+                                        <!-- <div class="pt-1 mb-4">
                                             <button class="btn btn-dark btn-lg btn-block" type="button">Login</button>
-                                        </div>
+                                        </div> -->
                                     </form>
 
                                 </div>
